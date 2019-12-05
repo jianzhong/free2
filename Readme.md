@@ -10,6 +10,7 @@ docker-compose up -d
 ## Build application
 ```
 docker container exec -it php composer install
+docker container exec -it php bin/console doctrine:migrations:migrate -n
 ```
 
 ## View in your browser
