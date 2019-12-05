@@ -1,4 +1,4 @@
-#Free2
+# Free2
 
 This application is developed with Symfony 4 framework. The form page controller class is src/Controller/UserController.php. View template files are under the templates/user folder. Since it's using Symfony Form component, the form page has csrf taken embeded.
 
