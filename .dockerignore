@@ -1,0 +1,10 @@
+docker
+.dockerignore
+.git*
+.travis.yml
+.env.test
+.project
+.settings
+var/*
+bin/.phpunit
+tests

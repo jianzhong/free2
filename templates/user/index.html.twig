@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<div class="container-fluid">
+    <h1>Your aplication <span style="color: mediumseagreen;"><i class="fas fa-info-circle"></i></span></h1>
+    Home > Your aplication
+</div>
+<div class="container-fluid">
+    {{ form_start(form) }}
+        <h3>Personal details</h3>
+        <hr />
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2 sr-only" for="salutation">Salutation</label>
+                {{ form_widget(form.salutation, {'attr': {'class': 'custom-select mr-sm-2'}}) }}
+            </div>
+            <div class="col-auto my-1">
+                <label class="mr-sm-2 sr-only" for="gender">Gender</label>
+                {{ form_widget(form.gender, {'attr': {'class': 'custom-select mr-sm-2'}}) }}
+            </div>
+            <div class="col-auto my-1">
+                <label for="date-input" class="mr-sm-2 sr-only">Date</label>
+                {{ form_widget(form.dob) }}
+            </div>
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="sr-only" for="yourname">Your name</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Your name</div>
+                    </div>
+                    {{ form_widget(form.firstname, {'attr': {'placeholder': 'First name', 'required':true}}) }}
+                    {{ form_widget(form.lastname, {'attr': {'placeholder': 'Surname', 'required':true }}) }}
+                </div>
+                <div class="invalid-feedback">
+                    <p>{{ form_errors(form.firstname) }}</p>
+                    <p>{{ form_errors(form.lastname) }}</p>
+                </div>
+            </div>
+        </div>
+        <h3>Address</h3>
+        <hr />
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="sr-only" for="postcode">Postcode</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Postcode</div>
+                    </div>
+                    {{ form_widget(form.postcode, {'attr': {'placeholder': 'Postcode'}}) }}
+                    <div class="text-danger">
+                    {{ form_errors(form.postcode) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto my-1">
+            {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+        </div>
+
+    {{ form_end(form) }}
+</div>
+{% endblock %}
